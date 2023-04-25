@@ -84,7 +84,7 @@ def model_prediction(input_data):
 def main():
     
     
-    st.title('Custoner Churn Prediction')
+    st.title('Customer Churn Prediction')
     
     gender = st.selectbox(
         'Gender',
