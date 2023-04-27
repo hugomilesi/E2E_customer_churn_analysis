@@ -1,0 +1,68 @@
+    gender = st.selectbox(
+        'Gender',
+        ['Male', 'Female']
+        )
+    seniorcitizen = st.selectbox(
+        'Customer is Senior?',
+        ['Yes', 'No']
+        )
+    partner = st.selectbox(
+        'Customer has a partner?',
+        ['Yes', 'No']
+        )
+    dependents = st.selectbox(
+        'Customer has a dependents?',
+        ['Yes', 'No']
+        )
+    phoneservice = st.selectbox(
+        'Customer has phone service?',
+        ['Yes', 'No']
+        )
+    multiplelines = st.selectbox(
+        'Customer has multiple lines?',
+        ['No phone service', 'Yes', 'No']
+        )
+    internetservice = st.selectbox(
+        'Internet service',
+        ['DSL', 'Fiber optic', 'No']
+        )
+    onlinesecurity = st.selectbox(
+        'Customer has online security?',
+        ['No', 'Yes', 'No internet service']
+        )
+    onlinebackup = st.selectbox(
+        'Customer has onlineBackup?',
+        ['No', 'Yes', 'No internet service']
+        )
+    deviceprotection = st.selectbox(
+        'Customer has device protection?',
+        ['No', 'Yes', 'No internet service']
+        )
+    devicesupport = st.selectbox(
+        'Customer has device support?',
+        ['No', 'Yes', 'No internet service']
+        )
+    streamingtv = st.selectbox(
+        'Customer has streaming tv?',
+        ['No', 'Yes', 'No internet service']
+        )
+    streamingmovies = st.selectbox(
+        'Customer has streaming movies benefit?',
+        ['No', 'Yes', 'No internet service']
+        )
+    contract = st.selectbox(
+        'Customer contract type',
+        ['Month-to-month', 'One year', 'Two year']
+    )
+    paperlessbilling = st.selectbox(
+        'Customer has paperless billing benefit?',
+        ['No', 'Yes']
+    )
+    paymentmethod = st.selectbox(
+        'Customer has payment method?',
+        ['Electronic check', 'Mailed check', 'Bank transfer (automatic)',
+       'Credit card (automatic)']
+       )
+    tenure = st.number_input('How many months the customer stayed with the signature?')
+    monthlycharges = st.number_input('Customer monthly charges.')
+    totalcharges = st.number_input('Customer total charge.')
