@@ -86,7 +86,7 @@ def main():
                 """)
     
     # Expander handler
-    with st.expander("Test With new data"):
+    with st.expander("CLICK HERE TO TEST THE MODEL WITH NEW DATA AND SEE THE PREDICTION!"):
         # divider
         st.markdown("""<hr style = 'border-top:8px solid crimson; border-radius:5px'>""", unsafe_allow_html=True)
         
