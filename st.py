@@ -188,9 +188,9 @@ def main():
         )
         
        
-        tenure = st.number_input('Tenure(months)', value = functions.tenure_val, min_value = 1.0, max_value = 72.0)
-        monthlycharges = st.number_input('Customer monthly charges.', value = functions.monthlycharges_val, max_value = 118.75)
-        totalcharges = st.number_input('Customer total charge.', value = functions.totalcharges_val, max_value = 8684.8)
+        tenure = st.number_input('Tenure(months)', value = functions.tenure_val)
+        monthlycharges = st.number_input('Customer monthly charges.', value = functions.monthlycharges_val)
+        totalcharges = st.number_input('Customer total charge.', value = functions.totalcharges_val)
         
     diagnosis = ''
     
