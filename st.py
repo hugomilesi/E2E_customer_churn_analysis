@@ -77,12 +77,12 @@ def model_prediction(input_data):
     prediction_proba = saved_model.predict_proba(input_data_reshaped)
     prediction_proba = float(prediction_proba[:, 1] * 100)
     prediction_proba = round(prediction_proba, 2)
-    
-    if(prediction[0] == 0):
-        return f"""This customer doesn't seem close to churn. Churn Probability: {prediction_proba}%"""
-    else:
-        return f"""This customer is close to churn! Churn probability: {prediction_proba}%"""
-    
+   
+        #if(prediction[0] == 0):
+            #return f"""This customer doesn't seem close to churn. Churn Probability: {prediction_proba}"""
+        #else:
+            #return f"""This customer is close to churn! Churn probability: {prediction_proba}%"""
+    return prediction[0], prediction_proba
     
 def main():
     
@@ -204,7 +204,12 @@ def main():
                                 streamingmovies, contract, paperlessbilling, paymentmethod, monthlycharges, totalcharges
                                 ])
         
-        st.success(churn_pred)
+        if churn_pred[0] == 1:
+            st.warning('This customer is close to churn.')
+            st.warning(f"Propensity to churn: {churn_pred[1]}")
+        else:
+            st.success("This customer isn't close to churn.")
+            st.success(f'Propensity to churn: {churn_pred[1]}')  
 
     if col4.button('RANDOMIZE!'):
         functions.randomizer()
