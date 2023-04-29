@@ -1,6 +1,8 @@
 import streamlit as st 
 import numpy as np
+import random
 import pickle
+import functions
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
@@ -8,6 +10,11 @@ from sklearn.preprocessing import MinMaxScaler
 saved_model = pickle.load(open('model_xgb.sav', 'rb')) 
 df = pd.read_csv('churn_data.csv')
 st.set_page_config(page_title='Churn analysis', layout = 'wide', initial_sidebar_state = 'auto')
+
+
+
+
+
 
 def show_data(input_data):
     
@@ -62,17 +69,19 @@ def preprocess_data(input_data):
     
 
 def model_prediction(input_data):
-    
     input_data = preprocess_data(input_data).values
     input_data_asarray = np.asarray(input_data)
     input_data_reshaped = input_data_asarray.reshape(1, -1)
 
     prediction = saved_model.predict(input_data_reshaped)
+    prediction_proba = saved_model.predict_proba(input_data_reshaped)
+    prediction_proba = float(prediction_proba[:, 1] * 100)
+    prediction_proba = round(prediction_proba, 2)
     
     if(prediction[0] == 0):
-        return "This customer doesn't seem close to churn."
+        return f"""This customer doesn't seem close to churn. Churn Probability: {prediction_proba}%"""
     else:
-        return "This customer is close to churn!"
+        return f"""This customer is close to churn! Churn probability: {prediction_proba}%"""
     
     
 def main():
@@ -94,93 +103,101 @@ def main():
                 - Most relevant fields accordingly to the trained model.
                 - Information inserted here will have more impact in model's decision than the rest of the fields.
                 """)
-    
-    contract = st.selectbox(
-        'Customer contract type',
-        ['Month-to-month', 'One year', 'Two year']
-    )
-    internetservice = st.selectbox(
-        'Internet service',
-        ['DSL', 'Fiber optic', 'No']
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        contract = st.selectbox(
+            'Customer contract type',
+            #['Month-to-month', 'One year', 'Two year']
+            functions.contract_type
         )
-    paymentmethod = st.selectbox(
-        'Customer has payment method?',
-        ['Electronic check', 'Mailed check', 'Bank transfer (automatic)',
-    'Credit card (automatic)']
+    with col2:
+        internetservice = st.selectbox(
+            'Internet service',
+            #['DSL', 'Fiber optic', 'No']
+            functions.dsl_fiber_no
+            )
+    with col3:
+        paymentmethod = st.selectbox(
+            'Customer has payment method?',
+            #['Electronic check', 'Mailed check', 'Bank transfer (automatic)',
+        #'Credit card (automatic)']
+            functions.payment
     )
     # divider
     st.markdown("""<hr style = 'border-top:8px solid crimson; border-radius:5px'>""", unsafe_allow_html=True)
     st.markdown("""## Least Relevant Fields""")
-    col1, col2 = st.columns(2)
+    col1, col2, col3, col4 = st.columns(4)
     # column 1
     with col1:
         gender = st.selectbox(
         'Gender',
-        ['Male', 'Female']
+        functions.male_female
         )
         seniorcitizen = st.selectbox(
-        'Customer is Senior?',
-        ['Yes', 'No']
+        'Senior citizen?',
+        functions.yes_no
         )
         partner = st.selectbox(
-        'Customer has a partner?',
-        ['Yes', 'No']
+        'Partner?',
+        functions.yes_no
         )
         dependents = st.selectbox(
-        'Customer has a dependents?',
-        ['Yes', 'No']
+        'Dependents?',
+        functions.yes_no
         )
+    with col2:
         phoneservice = st.selectbox(
-        'Customer has phone service?',
-        ['Yes', 'No']
+        'Phone service?',
+        functions.yes_no
         )
         multiplelines = st.selectbox(
-        'Customer has multiple lines?',
-        ['No phone service', 'Yes', 'No']
+        'Multiple lines?',
+        functions.yes_no_phone
         )
         onlinesecurity = st.selectbox(
-        'Customer has online security?',
-        ['No', 'Yes', 'No internet service']
+        'online security',
+        functions.yes_no_service
         )
         onlinebackup = st.selectbox(
-        'Customer has onlineBackup?',
-        ['No', 'Yes', 'No internet service']
+        'Online Backup?',
+        functions.yes_no_service
         )
     # column 2
-    with col2:
+    with col3:
         deviceprotection = st.selectbox(
-        'Customer has device protection?',
-        ['No', 'Yes', 'No internet service']
+        'Device protection?',
+        functions.yes_no_service
         )
         devicesupport = st.selectbox(
-            'Customer has device support?',
-            ['No', 'Yes', 'No internet service']
+            'Device support?',
+            functions.yes_no_service
             )
         streamingtv = st.selectbox(
-            'Customer has streaming tv?',
-            ['No', 'Yes', 'No internet service']
+            'Streaming tv?',
+            functions.yes_no_service
             )
         streamingmovies = st.selectbox(
-            'Customer has streaming movies benefit?',
-            ['No', 'Yes', 'No internet service']
+            'Streaming movies benefit?',
+            functions.yes_no_service
+    
             )
+    with col4:
         paperlessbilling = st.selectbox(
-            'Customer has paperless billing benefit?',
-            ['No', 'Yes']
+            'Paperless billing benefit?',
+            functions.yes_no
         )
-        tenure = st.number_input('Tenure(months)')
-        monthlycharges = st.number_input('Customer monthly charges.')
-        totalcharges = st.number_input('Customer total charge.')
-    
-    
-    
+        
+       
+        tenure = float(st.number_input('Tenure(months)', value = functions.tenure_val))
+        monthlycharges = st.number_input('Customer monthly charges.', value = functions.monthlycharges_val)
+        totalcharges = st.number_input('Customer total charge.', value = functions.totalcharges_val)
+        
     diagnosis = ''
     
     #button for prediction
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
     
-    col1, col2, col3, col4, col5 = st.columns(5)
-    
-    if col3.button('CUSTOMER DIAGNOSIS'):
+    if col3.button('MAKE PREDICTION'):
         
         churn_pred = model_prediction([gender, seniorcitizen, partner, dependents, tenure, phoneservice, multiplelines, 
                                 internetservice, onlinesecurity, onlinebackup, deviceprotection, devicesupport, streamingtv,
@@ -188,6 +205,9 @@ def main():
                                 ])
         
         st.success(churn_pred)
+
+    if col4.button('RANDOMIZE!'):
+        functions.randomizer()
     
 
 if __name__ == '__main__':
