@@ -11,8 +11,8 @@ payment = ['Electronic check', 'Mailed check', 'Bank transfer (automatic)',
 dsl_fiber_no = ['DSL', 'Fiber optic', 'No']
 contract_type = ['Month-to-month', 'One year', 'Two year']
 
-tenure_val = 0.0
-monthlycharges_val = 0.0
+tenure_val = 1.0
+monthlycharges_val = 18.25
 totalcharges_val = 0.0
 
 def randomizer():
@@ -39,11 +39,11 @@ def randomizer():
     contract_type = random.sample(contract_type, len(contract_type))
     
     global tenure_val
-    tenure_val = random.randint(0, 72)
+    tenure_val = random.randint(1, 72)
     
     global monthlycharges_val
-    monthlycharges_val = round(random.uniform(0, 300), 2)
+    monthlycharges_val = round(random.uniform(18.25, 118.75), 2)
     
     global totalcharges_val
-    totalcharges_val = round(random.uniform(0, 3000), 2)
+    totalcharges_val = round(random.uniform(18.8, 8684.8), 2)
     
