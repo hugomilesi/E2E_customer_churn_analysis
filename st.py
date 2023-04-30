@@ -30,7 +30,7 @@ def show_data(input_data):
     pd.set_option('display.max_columns', 19)
     df = df.append(data, ignore_index = True)
     
-    return st.dataframe(df)
+    return st.write('type:', df.dtypes)
 
 
 def preprocess_data(input_data):
@@ -48,9 +48,6 @@ def preprocess_data(input_data):
     
     mms = MinMaxScaler() # normalization
     
-    for i in range(len(columns)):
-        data = {columns[i]:input_data[i]}
-    
     # splitting categorical columns from numeric for encoding
     categorical = df.select_dtypes(include = ['object']).columns
     quant = df.select_dtypes(include = ['float64', 'int64']).columns # only numeric values
@@ -60,7 +57,8 @@ def preprocess_data(input_data):
 
     # normalizing numeric data
     for num in quant:
-        df[num] = mms.fit_transform(numeric[num].values.reshape(-1, 1))
+        #df[num] = mms.fit_transform(numeric[num].values.reshape(-1, 1))
+        numeric[num] = mms.fit_transform(numeric[num].values.reshape(-1, 1))
 
     # merging the encoded values with numerics again
     all_data = pd.concat([encoded, numeric], axis = 1)
@@ -213,7 +211,6 @@ def main():
 
     if col4.button('RANDOMIZE!'):
         functions.randomizer()
-    
 
 if __name__ == '__main__':
     main()
