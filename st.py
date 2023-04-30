@@ -203,11 +203,11 @@ def main():
                                 ])
         
         if churn_pred[0] == 1:
-            st.warning('This customer is close to churn.')
-            st.warning(f"Propensity to churn: {churn_pred[1]}")
+            st.warning(':warning: This customer is close to churn. :warning:')
+            st.warning(f" :boom: Propensity to churn: {churn_pred[1]}")
         else:
-            st.success("This customer isn't close to churn.")
-            st.success(f'Propensity to churn: {churn_pred[1]}')  
+            st.success(":sparkles: This customer isn't close to churn. :sparkles:")
+            st.success(f' :boom: Propensity to churn: {churn_pred[1]}%')  
 
     if col4.button('RANDOMIZE!'):
         functions.randomizer()
