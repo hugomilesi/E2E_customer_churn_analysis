@@ -9,80 +9,12 @@ from sklearn.preprocessing import MinMaxScaler
 
 saved_model = pickle.load(open('model_xgb.sav', 'rb')) 
 df = pd.read_csv('churn_data.csv')
-st.set_page_config(page_title='Churn analysis', layout = 'wide', initial_sidebar_state = 'auto')
+#st.set_page_config(page_title='Churn analysis', layout = 'wide', initial_sidebar_state = 'auto')
 
 
 
-
-
-
-def show_data(input_data):
-    
-    columns = ['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
-       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
-       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
-       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
-       'MonthlyCharges', 'TotalCharges']
-    
-    df = pd.read_csv('churn_data.csv', usecols = columns) # loading dataset
-    data = {columns[i]:input_data[i] for i in range(len(columns))}
-    
-    pd.set_option('display.max_columns', 19)
-    df = df.append(data, ignore_index = True)
-    
-    return st.write('type:', df.dtypes)
-
-
-def preprocess_data(input_data):
-    
-    columns = ['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
-       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
-       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
-       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
-       'MonthlyCharges', 'TotalCharges']
-    
-    df = pd.read_csv('churn_data.csv', usecols = columns) # loading dataset without the target('Churn') colmn
-    data = {columns[i]:input_data[i] for i in range(len(columns))} # storing the new values into a dictionary
-    pd.set_option('display.max_columns', 19)
-    df = df.append(data, ignore_index = True) # adding the dict values into the dataframe
-    
-    mms = MinMaxScaler() # normalization
-    
-    # splitting categorical columns from numeric for encoding
-    categorical = df.select_dtypes(include = ['object']).columns
-    quant = df.select_dtypes(include = ['float64', 'int64']).columns # only numeric values
-    
-    numeric = df[quant]
-    encoded = pd.get_dummies(df[categorical])
-
-    # normalizing numeric data
-    for num in quant:
-        #df[num] = mms.fit_transform(numeric[num].values.reshape(-1, 1))
-        numeric[num] = mms.fit_transform(numeric[num].values.reshape(-1, 1))
-
-    # merging the encoded values with numerics again
-    all_data = pd.concat([encoded, numeric], axis = 1)
-
-    return all_data.iloc[-1, :] # using the last value inserted into the dataframe
-    
-
-def model_prediction(input_data):
-    input_data = preprocess_data(input_data).values
-    input_data_asarray = np.asarray(input_data)
-    input_data_reshaped = input_data_asarray.reshape(1, -1)
-
-    prediction = saved_model.predict(input_data_reshaped)
-    prediction_proba = saved_model.predict_proba(input_data_reshaped)
-    prediction_proba = float(prediction_proba[:, 1] * 100)
-    prediction_proba = round(prediction_proba, 2)
-   
-        #if(prediction[0] == 0):
-            #return f"""This customer doesn't seem close to churn. Churn Probability: {prediction_proba}"""
-        #else:
-            #return f"""This customer is close to churn! Churn probability: {prediction_proba}%"""
-    return prediction[0], prediction_proba
-    
 def main():
+    st.set_page_config(page_title='Churn analysis', layout = 'wide', initial_sidebar_state = 'auto')
     
     st.header('XGBoost Customer Churn Prediction')
     st.markdown("""
@@ -105,20 +37,16 @@ def main():
     with col1:
         contract = st.selectbox(
             'Customer contract type',
-            #['Month-to-month', 'One year', 'Two year']
             functions.contract_type
         )
     with col2:
         internetservice = st.selectbox(
             'Internet service',
-            #['DSL', 'Fiber optic', 'No']
             functions.dsl_fiber_no
             )
     with col3:
         paymentmethod = st.selectbox(
             'Customer has payment method?',
-            #['Electronic check', 'Mailed check', 'Bank transfer (automatic)',
-        #'Credit card (automatic)']
             functions.payment
     )
     # divider
@@ -185,7 +113,6 @@ def main():
             functions.yes_no
         )
         
-       
         tenure = st.number_input('Tenure(months)', value = functions.tenure_val)
         monthlycharges = st.number_input('Customer monthly charges.', value = functions.monthlycharges_val)
         totalcharges = st.number_input('Customer total charge.', value = functions.totalcharges_val)
@@ -197,7 +124,7 @@ def main():
     
     if col3.button('MAKE PREDICTION'):
         
-        churn_pred = model_prediction([gender, seniorcitizen, partner, dependents, tenure, phoneservice, multiplelines, 
+        churn_pred = functions.model_prediction([gender, seniorcitizen, partner, dependents, tenure, phoneservice, multiplelines, 
                                 internetservice, onlinesecurity, onlinebackup, deviceprotection, devicesupport, streamingtv,
                                 streamingmovies, contract, paperlessbilling, paymentmethod, monthlycharges, totalcharges
                                 ])
