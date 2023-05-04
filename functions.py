@@ -2,14 +2,13 @@ import streamlit as st
 import numpy as np
 import random
 import pickle
-import functions
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
 
 
-saved_model = pickle.load(open('model_xgb.sav', 'rb')) 
-df = pd.read_csv('churn_data.csv')
+saved_model = pickle.load(open('model.sav', 'rb')) 
+df = pd.read_csv('data/churn_data.csv')
 
 yes_no = ['No', 'Yes']
 yes_no_service = ['No', 'Yes', 'No internet service']
@@ -32,7 +31,7 @@ def preprocess_data(input_data):
        'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
        'MonthlyCharges', 'TotalCharges']
     
-    df = pd.read_csv('churn_data.csv', usecols = columns) # loading dataset without the target('Churn') colmn
+    df = pd.read_csv('data/churn_data.csv', usecols = columns) # loading dataset without the target('Churn') colmn
     data = {columns[i]:input_data[i] for i in range(len(columns))} # storing the new values into a dictionary
     pd.set_option('display.max_columns', 19)
     df = df.append(data, ignore_index = True) # adding the dict values into the dataframe
