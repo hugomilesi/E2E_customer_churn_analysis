@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import random
 import pickle
-import functions
+from functions import *
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
