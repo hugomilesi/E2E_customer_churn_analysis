@@ -15,7 +15,7 @@ def main():
     })
     
     st.sidebar.title('Navigation')
-    options = st.sidebar.radio('Pages', options = ['Model Benchmark', 'Test New Data'])
+    options = st.sidebar.radio('Pages', options = ['Test New Data', 'Model Details' ])
     
     st.header('Random Forests Customer Churn Prediction')
     st.markdown("""
@@ -27,7 +27,7 @@ def main():
     
     if options == 'Test New Data':
         test_data()
-    if options  == 'Model Benchmark':
+    elif options  == 'Model Details':
         model_benchmark()
     
 if __name__ == '__main__':

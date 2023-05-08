@@ -7,6 +7,10 @@ def model_benchmark():
     df = df.sort_values(by = 'score', ascending=True)
     
     st.header('Model Benchmark')
-    fig=px.bar(x = df['score'], y = df['feature'], title = '(RF) Feature Importances')
+    st.markdown("""
+                - Here You can see the most important features selected by the Random Forests model.
+                
+                """)
+    fig=px.bar(x = df['score'], y = df['feature'], title = '(RF) Feature Importances', width=800, height=800)
     st.write(fig)
     
