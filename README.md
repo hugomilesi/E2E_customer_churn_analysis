@@ -2,7 +2,7 @@
 
 ## Instalation
 1. Clone this repo
-2. pip install requirements.txt
+2. ```pip install -r requirements.txt```
 3. ```streamlit run st.py ```
 
 ## Or check the web version 
