@@ -1,5 +1,6 @@
 
 # End to End Customer Churn Project.
+<img src="img/churn_interface.png" alt="Alt Text" width="1200" height="auto">
 - This project aims to train and deploy a machine learning model for classifying customer churns.
 - It goes since data collection to deploying model into production.
 - Optimized Random Forest, XGBoost, Logistic Regression, Naive Bayes and KNN using GridsearchCV to reach the best model.
