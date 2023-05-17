@@ -5,10 +5,22 @@
 - Optimized Random Forest, XGBoost, Logistic Regression, Naive Bayes and KNN using GridsearchCV to reach the best model.
 - Built a client facing API using streamlit.
 
+# Resources Used
+**Python Version:** 3.10<br>
+**Packages:** Streamlit, Sklearn, matplotlib, seaborn, pickle<br>
+**For Web Framework Requirements:** ```pip install -r requirements.txt```<br>
+**Run** ```streamlit run st.py ```<br>
 
-## EDA
+# Data Cleaning
+- Removed NaN rows.
+- Renamed row and column values for better understanding.
+- Transformed some variables to the right format.
 
-<p>Some of the EDA distribution</p>
+# EDA
+### Some hightlights from the tables
+- I built a chart using tenure(monthly) column to check the distribution types between churns.
+- Calculate the churn ratio and made a pie chart.
+- 
 
 <div style="display: flex;">
   <img src="img/churn_pie.png" alt="Alt Text" width="300" height="auto" style="flex: 1;">
