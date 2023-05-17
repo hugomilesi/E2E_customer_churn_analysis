@@ -17,7 +17,7 @@
 - Transformed some variables to the right format.
 
 # EDA
-### Some hightlights from the tables
+### Some highlights from the tables
 - I built a chart using tenure(monthly) column to check the distribution types between churns.
 - Calculate the churn ratio and made a pie chart.
 - Made some bar charts containing to show the distribution between categories.
