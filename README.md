@@ -1,5 +1,5 @@
 
-# E2E_customer_churn_analysis
+# End to End Customer Churn Project.
 - This project aims to train and deploy a machine learning model for classifying customer churns.
 - It goes since data collection to deploying model into production.
 - Optimized Random Forest, XGBoost, Logistic Regression, Naive Bayes and KNN using GridsearchCV to reach the best model.
