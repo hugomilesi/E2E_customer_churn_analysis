@@ -32,18 +32,24 @@
 1. Transformed categorical into dummy variables, scaled(0, 1) numerical variables.
 2. Churn and non-churn customer was unbalanced, so i applied the SMOTE(Synthetic Minority Oversampling Technique) technique.
 3. Split the data into train and test set with a test size of 20%.
-4. I tried three different models:
+4. I tried five different models:
+      - **K Nearest Neighbors**
+      - **Random Forests**
+      - **XGBoosting**
+      - **Logistic Regression**
+      - **Naive Bayes**
     
-<div style="display: flex;">
-  <img src="img/churn_auc_chart.png" alt="Alt Text" width="300" height="auto" style="flex: 1;">
-  <img src="img/churn_distribution.png" alt="Alt Text" width="400" height="auto" style="flex: 1;">
-</div>
-
 
 # Model Performance
 The Random Forest model outperformed the other approaches on the test and validation sets.
+<div style="display: flex;">
+  <img src="img/churn_auc_chart.png" alt="Alt Text" width="500" height="auto" style="flex: 1;">
+  <img src="img/c_matrix.png" alt="Alt Text" width="300" height="auto" style="flex: 1;">
+</div>
+<img src="img/churn_rf_feat_imp.png" alt="Alt Text" width="400" height="auto" style="flex: 1;">
+
 - **Random Forest AUC:**  = 0.86
-- **Gradient Boosting AUC:** 0.85
+- **Gradient Boosting AUC:** 0.86
 - **Logistic Regression AUC:** 0.84
 - **KNN AUC:** 0.82
 - **Naive Bayes AUC:** 0.76 
