@@ -57,10 +57,10 @@ The Random Forest model outperformed the other approaches on the test and valida
 - **Naive Bayes AUC:** 0.76 
 
 # Productionization
-- I built a UI hosted at Streamlit where you can insert new data see the model results.
+- I built a website hosted at Streamlit where you can insert new data and check the model results.
 - Created a 'Randomize' button to insert random data.
-- The After you click "Make Prediction" will tell if the customer is close to churn and its propensity to churn.  
-- In the 'Model Details' field contains a chart showing the most important features to make decision. 
+- After you click "Make Prediction" button, the model will try to predict how close the customer is close to churn.  
+- In 'Model Details' tab contains a chart showing the most important features to make decision. 
 - You can check the website version by clicking [This link](https://hugomilesi-e2e-customer-churn-analysis-st-iguvbo.streamlit.app) and insert new data.
 
 
