@@ -14,3 +14,7 @@ def model_benchmark():
     fig=px.bar(x = df['score'], y = df['feature'], title = '(RF) Feature Importances', width=800, height=800)
     st.write(fig)
     
+    st.header('Validation Data Test Results')
+    # Tableau DashBoard
+    iframe = '<iframe src="https://public.tableau.com/views/Churn_analysis_16878380667720/Dashboard?:showVizHome=no&:embed=true:language=pt-BR" width="900" height="700" allowfullscreen></iframe>'
+    st.markdown(iframe, unsafe_allow_html=True)
