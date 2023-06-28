@@ -6,6 +6,7 @@
 - It goes since data collection to deploying model into production.
 - Optimized Random Forest, XGBoost, Logistic Regression, Naive Bayes and KNN using GridsearchCV to reach the best model.
 - Built a client facing API using streamlit.
+- You can try with new data [HERE](https://hugomilesi-e2e-customer-churn-analysis-st-iguvbo.streamlit.app)
 
 # Resources Used
 **Python Version:** 3.10<br>
@@ -30,6 +31,7 @@
 </div>
 <img src="img/churn_contract.png" alt="Alt Text" width="400" height="auto" >
 
+
 # Model Building
 1. Transformed categorical into dummy variables, scaled(0, 1) numerical variables.
 2. Churn and non-churn customer was unbalanced, so i applied the SMOTE(Synthetic Minority Oversampling Technique) technique.
@@ -42,13 +44,16 @@
       - **Naive Bayes**
     
 
-# Model Performance
+# Model Benchmarking
 The Random Forest model outperformed the other approaches on the test and validation sets.
 <div style="display: flex;">
   <img src="img/churn_auc_chart.png" alt="Alt Text" width="500" height="auto" style="flex: 1;">
   <img src="img/c_matrix.png" alt="Alt Text" width="300" height="auto" style="flex: 1;">
 </div>
-<img src="img/churn_rf_feat_imp.png" alt="Alt Text" width="400" height="auto" style="flex: 1;">
+<div style = "display: flex;">
+  <img src="img/churn_rf_feat_imp.png" alt="Alt Text" width="400" height="auto" style="flex: 1;">
+  <img src="img/tableau_dash.png" alt="Alt Text" width="400" height="auto" >
+</div>
 
 - **Random Forest AUC:**  = 0.86
 - **Gradient Boosting AUC:** 0.86
