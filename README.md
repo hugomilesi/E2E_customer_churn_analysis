@@ -10,8 +10,6 @@
 
 # Resources Used
 **Python Version:** 3.10<br>
-**Excel**<br>
-**Tableau**<br>
 **Packages:** Streamlit, Sklearn, matplotlib, seaborn, pickle<br>
 **For Web Framework Requirements:** ```pip install -r requirements.txt```<br>
 **Run** ```streamlit run st.py ```<br>
@@ -31,13 +29,7 @@
   <img src="img/churn_pie.png" alt="Alt Text" width="300" height="auto" style="flex: 1;">
   <img src="img/churn_distribution.png" alt="Alt Text" width="400" height="auto" style="flex: 1;">
 </div>
-
-- Made an [INTERACTIVE CUSTOMER CHURN DASHBOARD](https://1drv.ms/x/s!Aq3t32RnF47AgVqUJNOHa5DbEZc5?e=PAtO1E) in **excel**.
-  
-<div style="display: flex;">
-  <img src="img/churn_dash.png" alt="Alt Text" width="800" height="auto" style="flex: 1;">
-</div>
-
+<img src="img/churn_contract.png" alt="Alt Text" width="400" height="auto" >
 
 
 # Model Building
@@ -53,8 +45,7 @@
     
 
 # Model Benchmarking
-- The Random Forest model outperformed the other approaches on the test and validation sets.
-- Created a [dashboard](https://public.tableau.com/app/profile/hugo.milesi/viz/Churn_analysis_16878380667720/Dashboard) in **Tableau Public** showing results of the model.
+The Random Forest model outperformed the other approaches on the test and validation sets.
 <div style="display: flex;">
   <img src="img/churn_auc_chart.png" alt="Alt Text" width="500" height="auto" style="flex: 1;">
   <img src="img/c_matrix.png" alt="Alt Text" width="300" height="auto" style="flex: 1;">
