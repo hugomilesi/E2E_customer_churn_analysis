@@ -45,21 +45,24 @@
     
 
 # Model Benchmarking
-The Random Forest model outperformed the other approaches on the test and validation sets.
+The Logistic Regression model outperformed the other approaches on the test and validation sets.
+
 <div style="display: flex;">
-  <img src="img/churn_auc_chart.png" alt="Alt Text" width="500" height="auto" style="flex: 1;">
-  <img src="img/c_matrix.png" alt="Alt Text" width="300" height="auto" style="flex: 1;">
+  <img src="https://github.com/hugomilesi/E2E_customer_churn_analysis/assets/71730507/cba9391a-a044-477e-aec0-bffca24477d2" alt="Alt Text" width="800" height="auto" style="flex: 1;">
+  
+
 </div>
 <div style = "display: flex;">
-  <img src="img/churn_rf_feat_imp.png" alt="Alt Text" width="400" height="auto" style="flex: 1;">
-  <img src="img/tableau_dash.png" alt="Alt Text" width="400" height="auto" >
+  <img src="https://github.com/hugomilesi/E2E_customer_churn_analysis/assets/71730507/28dc473d-80cc-4160-a1e9-46beea442b02" alt="Alt Text" width="400" height="300" style="flex: 1;">
+  <img src="img/tableau_dash.png" alt="Alt Text" width="400" height="300" >
 </div>
 
-- **Random Forest AUC:**  = 0.86
-- **Gradient Boosting AUC:** 0.86
-- **Logistic Regression AUC:** 0.84
-- **KNN AUC:** 0.82
-- **Naive Bayes AUC:** 0.76 
+**Cross Validation Results(accuracy):** 
+- Logistic Regression    82.8%
+- XG Boost               81.3%
+- Random Forests         80.8%
+- KNN                    77.7%
+- Naive Bayes            75.7%
 
 # Productionization
 - I built a website hosted at Streamlit where you can insert new data and check the model results.
