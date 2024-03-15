@@ -48,21 +48,22 @@
 The Logistic Regression model outperformed the other approaches on the test and validation sets.
 
 <div style="display: flex;">
-  <img src="https://github.com/hugomilesi/E2E_customer_churn_analysis/assets/71730507/cba9391a-a044-477e-aec0-bffca24477d2" alt="Alt Text" width="800" height="auto" style="flex: 1;">
+  <img src="https://github.com/hugomilesi/E2E_customer_churn_analysis/assets/71730507/b0f68009-e038-4a8a-b83f-7c906b860538" alt="Alt Text" width="800" height="auto" style="flex: 1;">
   
+
 
 </div>
 <div style = "display: flex;">
-  <img src="https://github.com/hugomilesi/E2E_customer_churn_analysis/assets/71730507/28dc473d-80cc-4160-a1e9-46beea442b02" alt="Alt Text" width="400" height="300" style="flex: 1;">
+  <img src="https://github.com/hugomilesi/E2E_customer_churn_analysis/assets/71730507/0e047fc3-7ad9-4923-a0bf-3b02bb54ef0c" alt="Alt Text" width="400" height="300" style="flex: 1;">
   <img src="img/tableau_dash.png" alt="Alt Text" width="400" height="300" >
 </div>
 
 **Cross Validation Results(accuracy):** 
-- Logistic Regression    82.8%
-- XG Boost               81.3%
-- Random Forests         80.8%
-- KNN                    77.7%
-- Naive Bayes            75.7%
+- Logistic Regression    83.2%
+- XG Boost               81.1%
+- Random Forests         80.7%
+- KNN                    76.7%
+- Naive Bayes            75.9%
 
 # Productionization
 - I built a website hosted at Streamlit where you can insert new data and check the model results.
