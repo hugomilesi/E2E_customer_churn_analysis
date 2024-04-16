@@ -1,0 +1,47 @@
+,feature,score
+0,gender_Female,0.015448703269006525
+1,gender_Male,0.015569260353209026
+2,seniorcitizen_No,0.009652188041600306
+3,seniorcitizen_Yes,0.011316112464589675
+4,partner_No,0.014978193900413845
+5,partner_Yes,0.012363748899490254
+6,dependents_No,0.012898300962017939
+7,dependents_Yes,0.010948332054473866
+8,phoneservice_No,0.0026876901063532456
+9,phoneservice_Yes,0.0023312916909735606
+10,multiplelines_No,0.011423329876152886
+11,multiplelines_No phone service,0.0026149671143569854
+12,multiplelines_Yes,0.012294187396369331
+13,internetservice_DSL,0.009990274763202005
+14,internetservice_Fiber optic,0.026358267768959304
+15,internetservice_No,0.002818206539449733
+16,onlinesecurity_No,0.047300478421950724
+17,onlinesecurity_No internet service,0.0036796741716657016
+18,onlinesecurity_Yes,0.011379803689380248
+19,onlinebackup_No,0.019713747901711407
+20,onlinebackup_No internet service,0.0037700050029222058
+21,onlinebackup_Yes,0.011253778208990517
+22,deviceprotection_No,0.01579373636948567
+23,deviceprotection_No internet service,0.004680106661992727
+24,deviceprotection_Yes,0.010738780422548739
+25,techsupport_No,0.03658371990703041
+26,techsupport_No internet service,0.0030758776251019297
+27,techsupport_Yes,0.011540458803874488
+28,streamingtv_No,0.009182433213235584
+29,streamingtv_No internet service,0.007052104502080187
+30,streamingtv_Yes,0.01069198253727912
+31,streamingmovies_No,0.00951442082009359
+32,streamingmovies_No internet service,0.004441347837802048
+33,streamingmovies_Yes,0.01198422343546078
+34,contract_Month-to-month,0.07848219873551723
+35,contract_One year,0.014819696179901707
+36,contract_Two year,0.026622261431031892
+37,paperlessbilling_No,0.012250134188237933
+38,paperlessbilling_Yes,0.018236381145349864
+39,paymentmethod_Bank transfer (automatic),0.012158137087031829
+40,paymentmethod_Credit card (automatic),0.01270050720084644
+41,paymentmethod_Electronic check,0.046804437707714676
+42,paymentmethod_Mailed check,0.011193341568435322
+43,tenure,0.12914166521018505
+44,monthlycharges,0.10902877144801433
+45,totalcharges,0.12249273336450903
