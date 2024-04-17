@@ -1,17 +1,18 @@
-from functions import *
+from utils.functions import *
 import plotly.express as px 
 
 def model_benchmark():
     df = pd.read_csv('data/feat_imp.csv') 
-    df.columns = ['feature', 'score']
     df = df.sort_values(by = 'score', ascending=True)
+
     
     st.header('Model Benchmark')
     st.markdown("""
-                - Here You can see the most important features selected by the Random Forests model.
+                - Here You can see the most important features selected by the XGB model.
                 
                 """)
-    fig=px.bar(x = df['score'], y = df['feature'], title = '(RF) Feature Importances', width=800, height=800)
+    fig=px.bar(x = df['score'], y = df['feature'], title = '(XGB) Feature Importances', width=1200, height=800)
+    fig.update_traces(marker_color = 'crimson')
     st.write(fig)
     
     st.header('Validation Data Test Results')

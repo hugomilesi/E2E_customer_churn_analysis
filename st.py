@@ -17,7 +17,7 @@ def main():
     st.sidebar.title('Navigation')
     options = st.sidebar.radio('Pages', options = ['Test New Data', 'Model Details' ])
     
-    st.header('Random Forests Customer Churn Prediction')
+    st.header('Gradient Boosting Customer Churn Prediction')
     st.markdown("""
                 ## About this project.
                 - This is a visual representation of a data mining project using [telco customer churn dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) stored at kaggle. 

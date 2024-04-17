@@ -1,4 +1,4 @@
-import functions
+import utils.functions as functions
 import streamlit as st
 
 def test_data():

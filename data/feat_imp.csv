@@ -1,11 +1,47 @@
-,coef
-tenure,0.13212935246848045
-TotalCharges,0.12846031863674967
-MonthlyCharges,0.1120445117506657
-Contract_Month-to-month,0.05869137675897387
-Contract_Two year,0.046668447762095194
-OnlineSecurity_No,0.031100963314314944
-TechSupport_No,0.026036568878405213
-Contract_One year,0.023827827021512593
-InternetService_Fiber optic,0.023563172309372882
-OnlineSecurity_Yes,0.023484564207780247
+feature,score
+gender_Female,0.004149499
+gender_Male,0.011147209
+seniorcitizen_No,0.0052399943
+seniorcitizen_Yes,0.008905801
+partner_No,0.005322012
+partner_Yes,0.009423248
+dependents_No,0.00840579
+dependents_Yes,0.0101539735
+phoneservice_No,0.01800207
+phoneservice_Yes,0.04811831
+multiplelines_No,0.010846396
+multiplelines_No phone service,0.0
+multiplelines_Yes,0.0069613243
+internetservice_DSL,0.005875204
+internetservice_Fiber optic,0.1890569
+internetservice_No,0.03615635
+onlinesecurity_No,0.008377738
+onlinesecurity_No internet service,0.0
+onlinesecurity_Yes,0.0132637955
+onlinebackup_No,0.008296298
+onlinebackup_No internet service,0.0
+onlinebackup_Yes,0.0075790477
+deviceprotection_No,0.005350182
+deviceprotection_No internet service,0.0
+deviceprotection_Yes,0.0049165627
+techsupport_No,0.013851011
+techsupport_No internet service,0.0
+techsupport_Yes,0.011702481
+streamingtv_No,0.009098543
+streamingtv_No internet service,0.0
+streamingtv_Yes,0.0076715155
+streamingmovies_No,0.008084874
+streamingmovies_No internet service,0.0
+streamingmovies_Yes,0.019804318
+contract_Month-to-month,0.31641743
+contract_One year,0.04405707
+contract_Two year,0.050954174
+paperlessbilling_No,0.010189715
+paperlessbilling_Yes,0.014169758
+paymentmethod_Bank transfer (automatic),0.011357577
+paymentmethod_Credit card (automatic),0.014428268
+paymentmethod_Electronic check,0.00955303
+paymentmethod_Mailed check,0.014122754
+tenure,0.0097725
+monthlycharges,0.0050962474
+totalcharges,0.0041210693

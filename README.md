@@ -26,10 +26,14 @@
 - Made some bar charts containing to show the distribution between categories.
 
 <div style="display: flex;">
-  <img src="img/churn_pie.png" alt="Alt Text" width="300" height="auto" style="flex: 1;">
-  <img src="img/churn_distribution.png" alt="Alt Text" width="400" height="auto" style="flex: 1;">
+  <img src="img/churn_pie.png" alt="Alt Text" height="400" style="width:800;">
+  <img src="img/cat_dist.png" alt="Alt Text" height="400" style="width:500">
 </div>
-<img src="img/churn_contract.png" alt="Alt Text" width="400" height="auto" >
+
+<div style="display: flex;">
+</div>
+
+
 
 
 # Model Building
@@ -45,23 +49,23 @@
     
 
 # Model Benchmarking
-The Logistic Regression model outperformed the other approaches on the test and validation sets.
+The XGBoost model outperformed the other approaches on the test and validation sets.
 
 <div style="display: flex;">
-  <img src="https://github.com/hugomilesi/E2E_customer_churn_analysis/assets/71730507/b0f68009-e038-4a8a-b83f-7c906b860538" alt="Alt Text" width="800" height="auto" style="flex: 1;">
+  <img src="img/churn_auc_chart.png" alt="Alt Text" width="1200"  style="height:500;">
   
 
 
 </div>
 <div style = "display: flex;">
-  <img src="https://github.com/hugomilesi/E2E_customer_churn_analysis/assets/71730507/0e047fc3-7ad9-4923-a0bf-3b02bb54ef0c" alt="Alt Text" width="400" height="300" style="flex: 1;">
-  <img src="img/tableau_dash.png" alt="Alt Text" width="400" height="300" >
+  <img src="img/c_matrix.png" alt="Alt Text" width="200" height="400" style="flex: 1;">
+  <img src="img/tableau_dash.png" alt="Alt Text" width="400" height="400" >
 </div>
 
 **Cross Validation Results(accuracy):** 
-- Logistic Regression    83.2%
-- XG Boost               81.1%
-- Random Forests         80.7%
+- Logistic Regression    82.7%
+- XG Boost               81.8%
+- Random Forests         81.2%
 - KNN                    76.7%
 - Naive Bayes            75.9%
 
