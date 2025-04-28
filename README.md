@@ -52,14 +52,12 @@
 The XGBoost model outperformed the other approaches on the test and validation sets.
 
 <div style="display: flex;">
-  <img src="img/churn_auc_chart.png" alt="Alt Text" width="1200"  style="height:500;">
-  
-
-
+  <img src="img/churn_auc_chart.png" alt="ROC-AUC Comparison" width="1200" height="500">
 </div>
-<div style = "display: flex;">
-  <img src="img/c_matrix.png" alt="Alt Text" width="200" height="400" style="flex: 1;">
-  <img src="img/tableau_dash.png" alt="Alt Text" width="400" height="400" >
+
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="img/c_matrix.png" alt="Confusion Matrix" style="width: 600px; height: 400px; object-fit: contain;">
+  <img src="img/tableau_dash.png" alt="Tableau Dashboard" style="width: 600px; height: 400px; object-fit: contain;">
 </div>
 
 **Cross Validation Results(accuracy):** 
