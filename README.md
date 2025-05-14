@@ -26,13 +26,9 @@
 - Made some bar charts containing to show the distribution between categories.
 
 <div style="display: flex;">
-  <img src="img/churn_pie.png" alt="Alt Text" height="400" style="width:800;">
-  <img src="img/cat_dist.png" alt="Alt Text" height="400" style="width:500">
+  <img src="img/churn_pie.png" alt="Alt Text" style="width: 100%;">
+  <img src="img/cat_dist.png" alt="Alt Text" style="width: 100%;">
 </div>
-
-<div style="display: flex;">
-</div>
-
 
 
 
@@ -53,16 +49,9 @@
 </div>
 
 <div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="img/c_matrix.png" alt="Confusion Matrix" style="width: 600px; height: 400px; object-fit: contain;">
-  <img src="img/roc_chart.png" alt="Tableau Dashboard" style="width: 600px; height: 400px; object-fit: contain;">
+  <img src="img/c_matrix.png" alt="Confusion Matrix" style="width: 500px; height: 200px; object-fit: contain;">
+  <img src="img/roc_chart.png" alt="Tableau Dashboard" style="width: 500px; height: 200px; object-fit: contain;">
 </div>
-
-**Cross Validation Results(accuracy):** 
-- Logistic Regression    82.7%
-- XG Boost               81.8%
-- Random Forests         81.2%
-- KNN                    76.7%
-- Naive Bayes            75.9%
 
 ## Selected Model: Logistic Regression
 
