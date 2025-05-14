@@ -23,6 +23,11 @@ tenure_val = 1.0
 monthlycharges_val = 18.25
 totalcharges_val = 0.0
 
+def load_model():
+    return pickle.load(open('utils/model.sav', 'rb')) 
+
+
+
 def preprocess_data(input_data):
     
     columns = ['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',

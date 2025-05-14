@@ -1,6 +1,7 @@
 from layouts.new_data import test_data
-from layouts.benchmark import model_benchmark
+from layouts.benchmark import model_benchmark, load_model
 import streamlit as st
+
 
 
 
@@ -14,7 +15,8 @@ def main():
         'Report a bug': "mailto:hugogmilesi@gmail.com",
     })
     
-    st.sidebar.title('Navigation')
+    st.sidebar.title('📊 Navigation')
+    st.sidebar.markdown("Navigate through the sections to explore the Logistic Regression model for customer churn prediction.")
     options = st.sidebar.radio('Pages', options = ['Test New Data', 'Model Details' ])
     
     st.header('Gradient Boosting Customer Churn Prediction')
@@ -24,6 +26,7 @@ def main():
                 - The model of choosing was **Random Forests**. If you want to checkout how i trained the model, please take a look at this [notebook](https://github.com/hugomilesi/E2E_customer_churn_analysis/blob/main/data_mining.ipynb) here.
                 - The model will predict if a customer will churn based on the data you provide below.
                 """)
+                
     
     if options == 'Test New Data':
         test_data()
