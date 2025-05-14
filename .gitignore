@@ -2,3 +2,5 @@ venv
 .env
 kaggle.json
 TODOS.md
+telco-customer-churn.zip
+WA_Fn-UseC_-Telco-Customer-Churn.csv
