@@ -42,16 +42,6 @@
       - **XGBoosting**
       - **Logistic Regression**
       - **Naive Bayes**
-    
-# Model Benchmarking
-<div style="display: flex;">
-  <img src="img/model_results.png" alt="results" width="1000" height="500">
-</div>
-
-<div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="img/c_matrix.png" alt="Confusion Matrix" style="width: 500px; height: 200px; object-fit: contain;">
-  <img src="img/roc_chart.png" alt="Tableau Dashboard" style="width: 500px; height: 200px; object-fit: contain;">
-</div>
 
 ## Selected Model: Logistic Regression
 
@@ -86,7 +76,16 @@ The following metrics informed the decision:
 | KNN                 | 0.762336        | 0.76234 ± 0.0193     | 0.83571 ± 0.0128       | 0.82     | 135             | 233             |
 | Naive Bayes         | 0.754107        | 0.75411 ± 0.0155     | 0.83389 ± 0.0198       | 0.76     | 148             | 352             |
 
+    
+# Model Benchmarking
+<div style="display: flex;">
+  <img src="img/model_results.png" alt="results" width="1000" height="500">
+</div>
 
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="img/c_matrix.png" alt="Confusion Matrix" style="width: 500px; height: 200px; object-fit: contain;">
+  <img src="img/roc_chart.png" alt="Tableau Dashboard" style="width: 500px; height: 200px; object-fit: contain;">
+</div>
 
 # Key Impacts
 - **Impact**: The model identifies at-risk customers with 83.2% accuracy, enabling precise targeting of retention efforts.
