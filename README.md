@@ -48,7 +48,6 @@
       - **Naive Bayes**
     
 # Model Benchmarking
-
 <div style="display: flex;">
   <img src="img/model_results.png" alt="results" width="1000" height="500">
 </div>

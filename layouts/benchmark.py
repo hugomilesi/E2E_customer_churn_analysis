@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, roc_curve, auc
 
 def model_benchmark():
 
-    # Custom CSS for styling
+
     st.markdown("""
     <style>
         .main { background-color: #f8f9fa; }
@@ -15,9 +15,18 @@ def model_benchmark():
         .stMetric { background-color: #040507; border-radius: 10px; padding: 10px; }
         .sidebar .sidebar-content { background-color: #f0f2f6; }
         h1, h2, h3 { color: #2c3e50; }
-        .stPlotlyChart { border: 1px solid #ddd; border-radius: 5px; padding: 10px; }
+        .stPlotlyChart { 
+            border: 2px solid #ddd;  /* Make border slightly thicker for visibility */
+            border-radius: 5px; 
+            padding: 15px;  /* Increase padding to create space inside the border */
+            margin-left: 10px;  /* Add right margin to avoid container edge */
+            overflow: hidden;  /* Prevent overflow */
+            box-sizing: border-box;  /* Ensure padding is included in the element's size */
+        }
     </style>
     """, unsafe_allow_html=True)
+
+
 
     st.title("📈 Customer Churn Prediction Dashboard")
     st.markdown("""
@@ -35,7 +44,7 @@ def model_benchmark():
     df=pd.read_csv('data/churn_data_encoded.csv')
     raw_df = pd.read_csv('data/churn_data.csv')
     feat_imp = pd.read_csv('data/feat_imp.csv') 
-    feat_imp = feat_imp.sort_values(by = 'Importance', ascending=True).head(25)
+    feat_imp = feat_imp.sort_values(by = 'Importance Mean', ascending=False).head(25)
     model = load_model()
     X = df.drop('churn_flag', axis=1)
     y=df['churn_flag'].values
@@ -62,8 +71,8 @@ def model_benchmark():
     st.subheader("Confusion Matrix")
     cm = confusion_matrix(y_test, y_pred)
     cm_df = pd.DataFrame(cm, index=["No Churn", "Churn"], columns=["Predicted No Churn", "Predicted Churn"])
-    fig_cm = px.imshow(cm_df, text_auto=True, color_continuous_scale='Blues', title="Confusion Matrix")
-    fig_cm.update_layout(template="plotly_dark", font=dict(size=14))
+    fig_cm = px.imshow(cm_df, text_auto=True, color_continuous_scale='Reds', title="Confusion Matrix")
+    fig_cm.update_layout(template="plotly_dark", font=dict(size=14), margin=dict(l=50, r=80, t=50, b=50))
     st.plotly_chart(fig_cm, use_container_width=True)
     
     # ROC Curve
@@ -71,38 +80,41 @@ def model_benchmark():
     fpr, tpr, _ = roc_curve(y_test, y_prob)
     roc_auc = auc(fpr, tpr)
     fig_roc = go.Figure()
-    fig_roc.add_trace(go.Scatter(x=fpr, y=tpr, mode='lines', name=f'ROC Curve (AUC = {roc_auc:.3f})', line=dict(color='#1f77b4')))
+    fig_roc.add_trace(go.Scatter(x=fpr, y=tpr, mode='lines', name=f'ROC Curve (AUC = {roc_auc:.3f})', line=dict(color='crimson')))
     fig_roc.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode='lines', line=dict(dash='dash', color='gray'), name='Random'))
     fig_roc.update_layout(
         title="ROC Curve",
         xaxis_title="False Positive Rate",
+        margin=dict(l=50, r=50, t=50, b=50),
         yaxis_title="True Positive Rate",
         template="plotly_dark",
         font=dict(size=14)
     )
-    st.plotly_chart(fig_roc, use_container_width=False)
+    st.plotly_chart(fig_roc, use_container_width=True)
 
     st.header("🔍 Feature Importance")
-    st.markdown("The top features driving churn include **tenure**, **totalcharges**, **monthlycharges**, and **month-to-month contracts**.")
+    st.markdown("**The top features for classifying the churn propensity**.")
 
     # Feature Importance Plot
-    feat_imp_top = feat_imp.sort_values(by='Coefficient', ascending=False).head(25)
+    feat_imp_top = feat_imp.sort_values(by='Importance Mean', ascending=False).head(25)
 
     fig = px.bar(
-        x=feat_imp_top['Importance'],
+        x=feat_imp_top['Importance Mean'],
         y=feat_imp_top['Feature'],
         title='Top 25 Features Selected by Logistic Regression',
-        color=feat_imp_top['Coefficient'],
+        color=feat_imp_top['Importance Mean'],
         color_continuous_scale=['#ffe5eb', '#f08080', '#dc143c']
     )
     fig.update_layout(
         template="plotly_dark",
-        xaxis_title="Importance",
+        xaxis_title="Importance Mean",
         yaxis_title="Feature",
         coloraxis_showscale=False,
-        height=700,
+        margin=dict(l=50, r=80, t=50, b=50),
+        height=600,
         font=dict(size=14)
     )
+    fig.update_yaxes(autorange='reversed')
     st.plotly_chart(fig, use_container_width=True)
 
 
