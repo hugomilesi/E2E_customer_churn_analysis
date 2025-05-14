@@ -63,9 +63,8 @@ def model_benchmark():
     cm = confusion_matrix(y_test, y_pred)
     cm_df = pd.DataFrame(cm, index=["No Churn", "Churn"], columns=["Predicted No Churn", "Predicted Churn"])
     fig_cm = px.imshow(cm_df, text_auto=True, color_continuous_scale='Blues', title="Confusion Matrix")
-    fig_cm.update_layout(template="plotly_white", font=dict(size=14))
+    fig_cm.update_layout(template="plotly_dark", font=dict(size=14))
     st.plotly_chart(fig_cm, use_container_width=True)
-    st.header('Model Benchmark')
     
     # ROC Curve
     st.subheader("ROC Curve")
@@ -78,7 +77,7 @@ def model_benchmark():
         title="ROC Curve",
         xaxis_title="False Positive Rate",
         yaxis_title="True Positive Rate",
-        template="plotly_white",
+        template="plotly_dark",
         font=dict(size=14)
     )
     st.plotly_chart(fig_roc, use_container_width=False)
@@ -97,7 +96,7 @@ def model_benchmark():
         color_continuous_scale=['#ffe5eb', '#f08080', '#dc143c']
     )
     fig.update_layout(
-        template="plotly_white",
+        template="plotly_dark",
         xaxis_title="Importance",
         yaxis_title="Feature",
         coloraxis_showscale=False,
@@ -145,7 +144,3 @@ def model_benchmark():
         - **Fiber Optic (33% churn)**: Improve service reliability and offer streaming bundles.
         - **Low Tenure (17.5 months)**: Enhance onboarding with free add-ons or loyalty incentives.
         """)
-
-    # Footer
-    st.markdown("---")
-    st.markdown("**Built with Streamlit** | Data: Telecom Churn Dataset | Model: Logistic Regression | © 2025 Telecom Analytics")

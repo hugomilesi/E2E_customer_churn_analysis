@@ -19,11 +19,11 @@ def main():
     st.sidebar.markdown("Navigate through the sections to explore the Logistic Regression model for customer churn prediction.")
     options = st.sidebar.radio('Pages', options = ['Test New Data', 'Model Details' ])
     
-    st.header('Gradient Boosting Customer Churn Prediction')
+    st.header('Customer Churn Prediction')
     st.markdown("""
                 ## About this project.
                 - This is a visual representation of a data mining project using [telco customer churn dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) stored at kaggle. 
-                - The model of choosing was **Random Forests**. If you want to checkout how i trained the model, please take a look at this [notebook](https://github.com/hugomilesi/E2E_customer_churn_analysis/blob/main/data_mining.ipynb) here.
+                - The model of choosing was **Logistic Regression**. If you want to checkout how i trained the model, please take a look at this [notebook](https://github.com/hugomilesi/E2E_customer_churn_analysis/blob/main/data_mining.ipynb) here.
                 - The model will predict if a customer will churn based on the data you provide below.
                 """)
                 

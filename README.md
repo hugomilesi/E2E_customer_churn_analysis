@@ -48,15 +48,14 @@
       - **Naive Bayes**
     
 # Model Benchmarking
-The XGBoost model outperformed the other approaches on the test and validation sets.
 
 <div style="display: flex;">
-  <img src="img/churn_auc_chart.png" alt="ROC-AUC Comparison" width="1200" height="500">
+  <img src="img/model_results.png" alt="results" width="1000" height="500">
 </div>
 
 <div style="display: flex; justify-content: center; gap: 20px;">
   <img src="img/c_matrix.png" alt="Confusion Matrix" style="width: 600px; height: 400px; object-fit: contain;">
-  <img src="img/tableau_dash.png" alt="Tableau Dashboard" style="width: 600px; height: 400px; object-fit: contain;">
+  <img src="img/roc_chart.png" alt="Tableau Dashboard" style="width: 600px; height: 400px; object-fit: contain;">
 </div>
 
 **Cross Validation Results(accuracy):** 
