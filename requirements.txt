@@ -32,8 +32,8 @@ jupyter_core==5.7.2
 kaggle==1.7.4.5
 kiwisolver
 MarkupSafe==3.0.2
-matplotlib==3.10.3
-matplotlib-inline==0.1.7
+matplotlib
+matplotlib-inline
 narwhals==1.39.0
 nbformat==5.10.4
 nest-asyncio==1.6.0
