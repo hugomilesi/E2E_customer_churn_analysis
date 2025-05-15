@@ -20,7 +20,7 @@ GitPython==3.1.44
 idna==3.10
 imblearn==0.0
 ipykernel==6.29.5
-ipython==9.2.0
+ipython
 ipython_pygments_lexers==1.1.1
 jedi==0.19.2
 Jinja2==3.1.6
